@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidushi Art Studio | Handmade Paintings & Sketches</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">Vidushi Art Studio</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Commission & Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Handcrafted Mandalas & Fine Canvas Art</h1>
+            <p>Original detailed sketches, textured impasto paintings, and vibrant watercolor portraits by Vidushi Lochan.</p>
+            <a href="#gallery" class="btn-primary">Explore Collection</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2>Art Collection</h2>
+        <p class="subtitle">Filter by medium or explore available original artworks.</p>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Artworks</button>
+            <button class="filter-btn" data-filter="mandala">Mandalas & Ink</button>
+            <button class="filter-btn" data-filter="canvas">Impasto & Canvas</button>
+            <button class="filter-btn" data-filter="watercolor">Watercolor & Portraits</button>
+        </div>
+
+        <div class="art-grid">
+            <!-- Artwork 1 -->
+            <div class="art-card" data-category="mandala">
+                <div class="img-wrapper">
+                    <img src="images/medusa_mandala.jpg" alt="Medusa Mandala Art">
+                </div>
+                <div class="art-info">
+                    <h3>Medusa Mandala</h3>
+                    <p class="medium">Intricate Pen & Ink Sketch</p>
+                    <p class="price">₹12,500 / $150</p>
+                    <button class="btn-secondary" onclick="openModal('images/medusa_mandala.jpg', 'Medusa Mandala', 'Intricate handcrafted pen and ink mandala featuring mythological Medusa iconography.')">View Details</button>
+                </div>
+            </div>
+
+            <!-- Artwork 2 -->
+            <div class="art-card" data-category="mandala">
+                <div class="img-wrapper">
+                    <img src="images/triple_mandala.jpg" alt="Triple Radial Mandala Pattern">
+                </div>
+                <div class="art-info">
+                    <h3>Triple Radial Mandala</h3>
+                    <p class="medium">Detailed Geometry Ink Drawing</p>
+                    <p class="price">₹15,000 / $180</p>
+                    <button class="btn-secondary" onclick="openModal('images/triple_mandala.jpg', 'Triple Radial Mandala', 'Multi-layered radial mandala drawing on textured off-white floral background.')">View Details</button>
+                </div>
+            </div>
+
+            <!-- Artwork 3 -->
+            <div class="art-card" data-category="canvas">
+                <div class="img-wrapper">
+                    <img src="images/impasto_sunflower.jpg" alt="White Floral Impasto Relief">
+                </div>
+                <div class="art-info">
+                    <h3>Monochrome Floral Impasto</h3>
+                    <p class="medium">Textured Palette Knife Acrylic on Canvas</p>
+                    <p class="price">₹18,000 / $220</p>
+                    <button class="btn-secondary" onclick="openModal('images/impasto_sunflower.jpg', 'Monochrome Floral Impasto', '3D high-relief impasto texture painting capturing a sunflower using pure white acrylic.')">View Details</button>
+                </div>
+            </div>
+
+            <!-- Artwork 4 -->
+            <div class="art-card" data-category="watercolor">
+                <div class="img-wrapper">
+                    <img src="images/abstract_portraits.jpg" alt="Expressionist Cubist Faces">
+                </div>
+                <div class="art-info">
+                    <h3>Prism of Expressions</h3>
+                    <p class="medium">Contemporary Watercolor Portraiture</p>
+                    <p class="price">₹14,000 / $170</p>
+                    <button class="btn-secondary" onclick="openModal('images/abstract_portraits.jpg', 'Prism of Expressions', 'Expressionist multi-portrait painting exploring human emotion through color blocks.')">View Details</button>
+                </div>
+            </div>
+
+            <!-- Artwork 5 -->
+            <div class="art-card" data-category="canvas">
+                <div class="img-wrapper">
+                    <img src="images/koi_fishes.jpg" alt="Yin Yang Koi Fish Painting">
+                </div>
+                <div class="art-info">
+                    <h3>Harmony Koi Fish</h3>
+                    <p class="medium">Acrylic on Oval Canvas</p>
+                    <p class="price">₹16,500 / $200</p>
+                    <button class="btn-secondary" onclick="openModal('images/koi_fishes.jpg', 'Harmony Koi Fish', 'Oval canvas artwork depicting twin orange and white Koi fish swimming gracefully in deep emerald waters.')">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2>About the Artist</h2>
+            <p>Welcome to Vidushi Art Studio. I am Vidushi Lochan, an artist passionate about exploring detailed geometry, rich impasto textures, and vibrant human portraiture. Every piece is crafted by hand, transforming raw canvases and paper into meaningful visual stories.</p>
+        </div>
+    </section>
+
+    <!-- Contact & Commission Section -->
+    <section id="contact" class="contact-section">
+        <h2>Inquire / Request Commission</h2>
+        <p>Interested in buying an existing piece or commissioning a custom artwork? Fill out the form below.</p>
+        <form class="contact-form" id="artForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email Address" required>
+            <select required>
+                <option value="">Select Artwork / Interest</option>
+                <option value="medusa">Medusa Mandala</option>
+                <option value="triple">Triple Radial Mandala</option>
+                <option value="sunflower">Monochrome Floral Impasto</option>
+                <option value="faces">Prism of Expressions</option>
+                <option value="koi">Harmony Koi Fish</option>
+                <option value="custom">Custom Commission</option>
+            </select>
+            <textarea rows="5" placeholder="Your Message or Custom Request Details..." required></textarea>
+            <button type="submit" class="btn-primary">Send Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Image Lightbox Modal -->
+    <div id="artModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" src="" alt="">
+            <div class="modal-details">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Vidushi Art Studio. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
